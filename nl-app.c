@@ -162,10 +162,10 @@ static int cmd_cabdiag_req_cb(const struct nlmsghdr *nlhdr, void *data)
 						mnl_attr_get_u8(nestattr));
 					break;
 				case CABDIAG_REQ_ATTR_TIMEOUT:
-					status.timeout =
+					status.timeout_cnt =
 						mnl_attr_get_u8(nestattr);
 					printf("Timeout count    : %d\n",
-						status.timeout);
+						status.timeout_cnt);
 					break;
 				case CABDIAG_REQ_ATTR_STATUS:
 					pairs = mnl_attr_get_u64(nestattr);

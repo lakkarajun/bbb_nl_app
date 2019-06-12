@@ -120,13 +120,13 @@ struct phy_cabdiag_pair_sta {
  * struct phy_cabdiag_req - PHY diagnostics request/status command
  * @op_status: Cable Diagnostics Operational status
  * @pairs_bitmask: Allows settings diag request just for a pair
- * @timeout: Timeout in seconds
+ * @timeout: Timeout count (i.e. Multiples of driver wait time)
  * @pairs[CABDIAG_PAIR_CNT]: Status of 4 pairs of cable
  */
 struct phy_cabdiag_req {
         enum phy_cabdiag_op_sta op_status;
         u8 pairs_bitmask;
-        u8 timeout;
+        u8 timeout_cnt;
         struct phy_cabdiag_pair_sta pairs[CABDIAG_PAIR_CNT];
 };
 
